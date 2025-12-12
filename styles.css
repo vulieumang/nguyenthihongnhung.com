@@ -1,0 +1,237 @@
+:root {
+    /* Color Palette */
+    --bg-primary: #FEF9E7;
+    --bg-secondary: #FFF0F5;
+    --accent-pink: #FFB7B2;
+    --accent-mint: #B5EAD7;
+    --accent-yellow: #FFFFB5;
+    --text-color: #4a4a4a;
+    /* Darker text for better contrast */
+    --border-color: #333333;
+
+    /* Fonts */
+    --font-heading: 'Pacifico', cursive;
+    --font-body: 'Varela Round', sans-serif;
+
+    /* Design Tokens */
+    --border-width: 3px;
+    --shadow-offset: 4px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    /* Default to Dot Grid as it's cleaner */
+    background-image: url('assets/bg-dot-grid.png');
+    background-repeat: repeat;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* Background Options (Toggle these classes on body to test) */
+body.bg-paper {
+    background-image: url('assets/paper-texture.png');
+}
+
+body.bg-watercolor {
+    background-image: url('assets/bg-watercolor.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body.bg-dot-grid {
+    background-image: url('assets/bg-dot-grid.png');
+}
+
+body.bg-solid {
+    background-image: none;
+    background-color: #FFFDF5;
+    /* Very light cream */
+}
+
+/* Readability Improvement: Add slight background to text containers if needed */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    /* Halo effect */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--text-color);
+    font-weight: 400;
+    /* Handwriting fonts often heavy enough */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hand-drawn Button Style */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--accent-mint);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    /* Organic border radius */
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-color);
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0 var(--border-color);
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 var(--border-color);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+    border-bottom: var(--border-width) dashed var(--border-color);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.portfolio-item {
+    background: white;
+    border: var(--border-width) solid var(--border-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-color);
+    transition: transform 0.2s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-thumb {
+    width: 100%;
+    height: 200px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.portfolio-item h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5rem;
+}
+
+.portfolio-item p {
+    margin: 0;
+    color: #777;
+}
+
+/* Contact Section */
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.social-links li {
+    margin: 10px 0;
+}
+
+.social-links a {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--accent-mint);
+}
+
+.contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background: var(--bg-secondary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-pink);
+    background: white;
+}

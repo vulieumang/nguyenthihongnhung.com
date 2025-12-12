@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Thị Hồng Nhung | Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Patrick+Hand&family=Varela+Round&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Header Specific */
+        header {
+            padding: 20px 0;
+            background-color: var(--bg-primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: var(--border-width) solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--text-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: bold;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-pink);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Hero Specific */
+        .hero {
+            padding: 100px 0;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        /* Placeholder for illustration */
+        .blob-shape {
+            width: 400px;
+            height: 400px;
+            background-color: var(--accent-yellow);
+            border: var(--border-width) solid var(--border-color);
+            border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 10px 10px 0 var(--accent-pink);
+            animation: blob-bounce 6s ease-in-out infinite;
+        }
+
+        @keyframes blob-bounce {
+
+            0%,
+            100% {
+                border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+            }
+
+            50% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Nguyễn Thị Hồng Nhung</a>
+                <div class="nav-links">
+                    <a href="#about">Về mình</a>
+                    <a href="#portfolio">Dự án</a>
+                    <a href="#contact">Liên hệ</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1>Chào bạn,<br>Mình là Nhung! <span style="color: var(--accent-pink)">✿</span></h1>
+                <p>Một người yêu cái đẹp, thích sáng tạo và vẽ nên những điều dễ thương.</p>
+                <a href="#contact" class="btn">Liên hệ với mình</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/hero-photo.jpg" alt="Nguyễn Thị Hồng Nhung"
+                    style="max-width: 100%; height: auto; filter: drop-shadow(10px 10px 0 var(--accent-pink)); border-radius: 20px; border: var(--border-width) solid var(--border-color);">
+            </div>
+        </section>
+
+        <section id="about" class="section container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2>Một chút về mình</h2>
+                <p>Mình thích thiết kế những giao diện mang lại niềm vui. Phong cách của mình là sự kết hợp giữa sự chỉn
+                    chu của công nghệ và sự ngẫu hứng của nghệ thuật thủ công.</p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2>Dự án tiêu biểu</h2>
+                <p>Những đứa con tinh thần mình đã chăm chút</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-thumb" style="background-color: #ffcccc;"></div>
+                    <h3>Website Cá Nhân</h3>
+                    <p>Thiết kế & Lập trình</p>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-thumb" style="background-color: #ccffcc;"></div>
+                    <h3>App Học Tập</h3>
+                    <p>UI/UX Design</p>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-thumb" style="background-color: #ccccff;"></div>
+                    <h3>Minh Họa Sách</h3>
+                    <p>Digital Art</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Kết nối với mình</h2>
+                    <p>Mình luôn sẵn sàng cho những ý tưởng mới mẻ. Đừng ngần ngại nhắn tin cho mình nhé!</p>
+                    <ul class="social-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label>Tên của bạn</label>
+                            <input type="text" placeholder="Bạn tên là gì nè?">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="Để mình gửi thư lại nha">
+                        </div>
+                        <div class="form-group">
+                            <label>Lời nhắn</label>
+                            <textarea rows="4" placeholder="Bạn muốn nhắn nhủ gì không?"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Gửi thư đi</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0;">
+            <p>&copy; 2024 Nguyễn Thị Hồng Nhung. Made with <span style="color: var(--accent-pink)">♥</span></p>
+        </div>
+    </footer>
+
+    <!-- Theme Switcher for Demo -->
+    <div
+        style="position: fixed; bottom: 20px; right: 20px; background: white; padding: 10px; border: 2px solid #333; border-radius: 10px; box-shadow: 3px 3px 0 #333; z-index: 1000;">
+        <p style="margin: 0 0 5px 0; font-size: 0.8rem; font-weight: bold;">Đổi hình nền:</p>
+        <div style="display: flex; gap: 5px;">
+            <button onclick="document.body.className = 'bg-dot-grid'"
+                style="width: 20px; height: 20px; border: 1px solid #333; background: #fff; cursor: pointer;"
+                title="Dot Grid"></button>
+            <button onclick="document.body.className = 'bg-watercolor'"
+                style="width: 20px; height: 20px; border: 1px solid #333; background: #ffdede; cursor: pointer;"
+                title="Watercolor"></button>
+            <button onclick="document.body.className = 'bg-solid'"
+                style="width: 20px; height: 20px; border: 1px solid #333; background: #FFFDF5; cursor: pointer;"
+                title="Solid Color"></button>
+            <button onclick="document.body.className = 'bg-paper'"
+                style="width: 20px; height: 20px; border: 1px solid #333; background: #dcd0c0; cursor: pointer;"
+                title="Original Paper"></button>
+        </div>
+    </div>
+
+</body>
+
+</html>
