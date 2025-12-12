@@ -64,9 +64,16 @@ h3,
 h4,
 h5,
 h6,
-li {
+li,
+#gameScore {
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
     /* Halo effect */
+}
+
+/* Game Canvas */
+#gameCanvas {
+    image-rendering: pixelated;
+    /* Sharp pixels for sprite look */
 }
 
 /* Typography */
